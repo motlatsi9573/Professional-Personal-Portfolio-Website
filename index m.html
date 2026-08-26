@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motlatsi Seema — Cybersecurity Analyst &amp; Data Analyst</title>
+<meta name="description" content="Portfolio of Motlatsi Seema — Certified Cybersecurity Analyst, Ethical Hacker and Data Analyst (Excel &amp; SQL).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0f1a;
+    --panel:#101827;
+    --panel-2:#0d1420;
+    --line:#213049;
+    --paper:#e9edf3;
+    --muted:#8a96ac;
+    --amber:#f5a623;
+    --teal:#35d6c0;
+    --red:#ff5c5c;
+    --radius:2px;
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+    --maxw:1120px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:64px 64px;
+    opacity:0.06;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3{font-family:var(--display); margin:0; letter-spacing:-0.01em;}
+  p{margin:0;}
+  ul{margin:0;padding:0;list-style:none;}
+
+  :focus-visible{
+    outline:2px solid var(--amber);
+    outline-offset:3px;
+  }
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px; position:relative; z-index:1;}
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--teal);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:7px;height:7px;
+    background:var(--teal);
+    display:inline-block;
+  }
+
+  /* ---------- Top status bar ---------- */
+  .statusbar{
+    position:sticky; top:0; z-index:40;
+    background:rgba(10,15,26,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .statusbar-inner{
+    max-width:var(--maxw); margin:0 auto; padding:12px 28px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    font-family:var(--mono); font-size:12px; letter-spacing:0.06em; color:var(--muted);
+  }
+  .status-live{display:flex; align-items:center; gap:8px; color:var(--paper); white-space:nowrap;}
+  .dot{
+    width:8px; height:8px; border-radius:50%; background:var(--red);
+    box-shadow:0 0 0 0 rgba(255,92,92,0.6);
+    animation:pulse 2.2s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(255,92,92,0.45);}
+    70%{box-shadow:0 0 0 8px rgba(255,92,92,0);}
+    100%{box-shadow:0 0 0 0 rgba(255,92,92,0);}
+  }
+  nav{display:flex; gap:22px; flex-wrap:wrap;}
+  nav a{
+    text-decoration:none; color:var(--muted); text-transform:uppercase;
+    padding:4px 2px; border-bottom:1px solid transparent;
+  }
+  nav a:hover{color:var(--paper); border-color:var(--amber);}
+  .nav-toggle{display:none;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:96px 0 72px;
+    position:relative;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .scan-line{
+    position:absolute; top:0; left:-30%; width:30%; height:100%;
+    background:linear-gradient(90deg, transparent, rgba(53,214,192,0.10), transparent);
+    animation:sweep 7s ease-in-out infinite;
+    pointer-events:none;
+  }
+  @keyframes sweep{
+    0%{left:-30%;}
+    50%{left:100%;}
+    100%{left:100%;}
+  }
+  .file-no{
+    font-family:var(--mono); font-size:12px; color:var(--muted);
+    letter-spacing:0.1em; margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(40px, 6vw, 74px);
+    line-height:0.98;
+    color:var(--paper);
+  }
+  .hero h1 span{color:var(--teal);}
+  .hero-role{
+    font-family:var(--mono);
+    font-size:clamp(13px,1.6vw,16px);
+    color:var(--amber);
+    margin-top:18px;
+    letter-spacing:0.02em;
+  }
+  .hero-lede{
+    max-width:640px;
+    margin-top:22px;
+    color:#c7d0dd;
+    font-size:17px;
+  }
+  .tags{
+    display:flex; flex-wrap:wrap; gap:10px; margin-top:30px;
+  }
+  .tag{
+    font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    border:1px solid var(--line); color:var(--muted);
+    padding:7px 12px;
+  }
+  .tag.on{border-color:var(--teal); color:var(--teal);}
+  .hero-cta{margin-top:38px; display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--mono); font-size:13px; letter-spacing:0.04em;
+    padding:13px 22px; text-decoration:none; display:inline-block;
+    border:1px solid var(--line);
+  }
+  .btn.primary{background:var(--amber); color:#1a1204; border-color:var(--amber); font-weight:600;}
+  .btn.primary:hover{background:#ffb945;}
+  .btn.ghost{color:var(--paper);}
+  .btn.ghost:hover{border-color:var(--paper);}
+
+  /* ---------- Section shell ---------- */
+  section{padding:76px 0; border-bottom:1px solid var(--line);}
+  .sec-head{margin-bottom:38px;}
+  .sec-head h2{font-size:clamp(26px,3vw,34px); margin-top:10px; color:var(--paper);}
+  .sec-head .field{color:var(--muted); font-family:var(--mono); font-size:12px; margin-top:8px;}
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display:grid; grid-template-columns: 1.3fr 1fr; gap:48px; align-items:start;
+  }
+  .about-grid p{color:#c7d0dd; font-size:16px;}
+  .about-grid p + p{margin-top:16px;}
+  .about-card{
+    background:var(--panel); border:1px solid var(--line); padding:24px;
+  }
+  .about-card dt{font-family:var(--mono); font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; margin-top:16px;}
+  .about-card dt:first-of-type{margin-top:0;}
+  .about-card dd{margin:4px 0 0; font-size:14.5px; color:var(--paper);}
+
+  /* ---------- Skills ---------- */
+  .skills-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+  .skill-panel{background:var(--panel); border:1px solid var(--line); padding:26px;}
+  .skill-panel h3{
+    font-family:var(--mono); font-size:13px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--teal); margin-bottom:18px; padding-bottom:12px; border-bottom:1px solid var(--line);
+  }
+  .skill-panel.soft h3{color:var(--amber);}
+  .skill-list li{
+    display:flex; align-items:center; gap:10px; padding:9px 0;
+    border-bottom:1px dashed var(--line); font-size:14.5px; color:#dbe2ec;
+  }
+  .skill-list li:last-child{border-bottom:none;}
+  .skill-list li::before{content:">"; font-family:var(--mono); color:var(--muted);}
+
+  /* ---------- Projects ---------- */
+  .proj-list{display:flex; flex-direction:column; gap:20px;}
+  .proj-card{
+    background:var(--panel); border:1px solid var(--line); padding:28px;
+    display:grid; grid-template-columns: 200px 1fr; gap:28px;
+  }
+  .proj-meta{font-family:var(--mono); font-size:11.5px; color:var(--muted);}
+  .proj-meta .idx{color:var(--amber); display:block; margin-bottom:8px; font-size:12px;}
+  .proj-meta .class{display:block; margin-top:10px; color:var(--teal);}
+  .proj-body h3{font-size:21px; color:var(--paper); margin-bottom:10px;}
+  .proj-body p.desc{color:#c7d0dd; font-size:15px; margin-bottom:14px;}
+  .proj-body ul{display:flex; flex-direction:column; gap:6px; margin-bottom:16px;}
+  .proj-body ul li{font-size:14px; color:#b9c3d2; font-family:var(--mono);}
+  .proj-body ul li::before{content:"$ "; color:var(--teal);}
+  .stack{display:flex; flex-wrap:wrap; gap:8px;}
+  .stack span{
+    font-family:var(--mono); font-size:11px; border:1px solid var(--line); color:var(--muted);
+    padding:5px 10px;
+  }
+
+  /* ---------- Education / Certifications ---------- */
+  .ed-cert-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+  .record{border-left:2px solid var(--line); padding:4px 0 4px 20px; margin-bottom:22px; position:relative;}
+  .record:last-child{margin-bottom:0;}
+  .record::before{
+    content:""; position:absolute; left:-6px; top:6px; width:10px; height:10px;
+    background:var(--ink); border:2px solid var(--teal);
+  }
+  .record .when{font-family:var(--mono); font-size:11.5px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em;}
+  .record h4{font-family:var(--display); font-size:17px; color:var(--paper); margin-top:6px;}
+  .record .org{font-size:14px; color:#b9c3d2; margin-top:2px;}
+  .cert-item::before{border-color:var(--amber);}
+
+  /* ---------- Contact ---------- */
+  .contact{border-bottom:none;}
+  .contact-panel{
+    background:var(--panel); border:1px solid var(--line); padding:44px;
+    display:grid; grid-template-columns:1.1fr 1fr; gap:40px;
+  }
+  .contact-panel h2{font-size:clamp(24px,3vw,32px); color:var(--paper); margin-bottom:14px;}
+  .contact-panel p{color:#c7d0dd; font-size:15.5px;}
+  .contact-list{margin-top:26px; display:flex; flex-direction:column; gap:14px;}
+  .contact-list a{
+    display:flex; justify-content:space-between; align-items:center;
+    text-decoration:none; border:1px solid var(--line); padding:14px 16px;
+    font-family:var(--mono); font-size:13.5px; color:var(--paper);
+  }
+  .contact-list a:hover{border-color:var(--teal); color:var(--teal);}
+  .contact-list a .k{color:var(--muted); text-transform:uppercase; font-size:11px; letter-spacing:0.08em;}
+  .status-stamp{
+    align-self:start;
+    border:1px dashed var(--amber);
+    color:var(--amber);
+    font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    padding:14px 16px;
+  }
+  .status-stamp span{display:block; color:var(--muted); font-size:10.5px; margin-top:6px; letter-spacing:0.06em;}
+
+  footer{padding:32px 0; text-align:center;}
+  footer p{font-family:var(--mono); font-size:11.5px; color:var(--muted);}
+
+  @media (max-width: 860px){
+    .about-grid, .skills-grid, .ed-cert-grid, .contact-panel{grid-template-columns:1fr;}
+    .proj-card{grid-template-columns:1fr;}
+    .proj-meta{display:flex; gap:16px; flex-wrap:wrap;}
+    .proj-meta .class{margin-top:0;}
+    nav{display:none; flex-direction:column; gap:2px; width:100%; padding-top:12px;}
+    nav.open{display:flex;}
+    .statusbar-inner{flex-wrap:wrap;}
+    .nav-toggle{
+      display:inline-block; font-family:var(--mono); font-size:12px; color:var(--paper);
+      background:none; border:1px solid var(--line); padding:6px 10px; cursor:pointer;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .scan-line{animation:none; display:none;}
+    .dot{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="statusbar">
+  <div class="statusbar-inner">
+    <div class="status-live"><span class="dot" aria-hidden="true"></span> SYSTEM STATUS: MONITORING · CANDIDATE ACTIVE</div>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">MENU</button>
+    <nav id="siteNav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#certifications">Certs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="scan-line" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="file-no">CASE FILE NO. MS—2024 // CLASSIFICATION: OPEN</div>
+    <h1>MOTLATSI<br><span>SEEMA</span></h1>
+    <div class="hero-role">CYBERSECURITY ANALYST · ETHICAL HACKER · DATA ANALYST (EXCEL &amp; SQL)</div>
+    <p class="hero-lede">I work at the meeting point of data and security. I collect and structure information using Excel and SQL, and I protect that information from malicious activity as a certified cybersecurity analyst and ethical hacker.</p>
+    <div class="tags">
+      <span class="tag on">Open to internships</span>
+      <span class="tag on">Entry-level roles</span>
+      <span class="tag">Security operations</span>
+      <span class="tag">Data analysis</span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn primary" href="#projects">View projects</a>
+      <a class="btn ghost" href="assets/motlatsi-seema-cv.pdf" download>Download CV</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Field: About</div>
+      <h2>Thinks like an attacker, works like an analyst.</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>I trained at the Alpvest Institute for Future Tech, where I completed my ethical hacking, cybersecurity analyst and Excel certifications, and I completed the IT in Business course through HP LIFE. That mix taught me to think like an attacker, work like an analyst, and explain the risk in plain business language.</p>
+        <p>I'm currently open to internships and entry-level opportunities in cybersecurity, security operations and data analysis, where I can keep building practical experience while adding real value to a team.</p>
+      </div>
+      <dl class="about-card">
+        <dt>Location</dt>
+        <dd>South Africa</dd>
+        <dt>Focus</dt>
+        <dd>Cybersecurity &amp; Data Analysis</dd>
+        <dt>Status</dt>
+        <dd>Open to internships &amp; entry-level roles</dd>
+        <dt>Training</dt>
+        <dd>Alpvest Institute for Future Tech</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Field: Skills</div>
+      <h2>Technical and soft skills</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-panel">
+        <h3>Technical</h3>
+        <ul class="skill-list">
+          <li>Cybersecurity &amp; data protection</li>
+          <li>Ethical hacking</li>
+          <li>Threat detection</li>
+          <li>Incident response</li>
+          <li>Network security</li>
+          <li>Database collection</li>
+          <li>Microsoft Excel (advanced)</li>
+          <li>SQL</li>
+          <li>Data cleaning, reporting &amp; dashboards</li>
+        </ul>
+      </div>
+      <div class="skill-panel soft">
+        <h3>Soft skills</h3>
+        <ul class="skill-list">
+          <li>Analytical thinking</li>
+          <li>Problem solving</li>
+          <li>Attention to detail</li>
+          <li>Clear communication</li>
+          <li>Teamwork</li>
+          <li>Integrity &amp; discretion</li>
+          <li>Time management</li>
+          <li>Continuous learning</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Field: Projects</div>
+      <h2>Selected work</h2>
+    </div>
+    <div class="proj-list">
+
+      <article class="proj-card">
+        <div class="proj-meta">
+          <span class="idx">INCIDENT #001</span>
+          Security AI · Python
+          <span class="class">Classification: Threat Detection</span>
+        </div>
+        <div class="proj-body">
+          <h3>AI Malicious Activity Detector</h3>
+          <p class="desc">An AI system that monitors server traffic and behaviour, learns what normal looks like, and flags malicious or suspicious activity before it turns into a breach.</p>
+          <ul>
+            <li>Anomaly detection on server logs and network events</li>
+            <li>Real-time alerting on suspicious behaviour patterns</li>
+            <li>Reduces manual log review for security analysts</li>
+          </ul>
+          <div class="stack"><span>Python</span><span>Anomaly Detection</span><span>Log Analysis</span><span>Security AI</span></div>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-meta">
+          <span class="idx">INCIDENT #002</span>
+          Full-stack web
+          <span class="class">Classification: Public Platform</span>
+        </div>
+        <div class="proj-body">
+          <h3>Live News &amp; History Platform</h3>
+          <p class="desc">A fully built website where anyone can check and follow current news, designed so the upcoming generation can study the history that is being made right now.</p>
+          <ul>
+            <li>Curated, continuously updated news feed</li>
+            <li>Topic archives that read like a living history record</li>
+            <li>Fast, mobile-first and accessible interface</li>
+          </ul>
+          <div class="stack"><span>Full-Stack</span><span>Web Platform</span><span>Content Archives</span><span>Responsive UI</span></div>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-meta">
+          <span class="idx">INCIDENT #003</span>
+          AI · Market data
+          <span class="class">Classification: Trend Intelligence</span>
+        </div>
+        <div class="proj-body">
+          <h3>Stock Trading AI Tracker</h3>
+          <p class="desc">An AI assistant that tracks the stock market, follows price movement and surfaces trading signals and trends from live market data.</p>
+          <ul>
+            <li>Market data ingestion and trend tracking</li>
+            <li>Signal generation from historical patterns</li>
+            <li>Watchlists and performance summaries</li>
+          </ul>
+          <div class="stack"><span>AI</span><span>Market Data</span><span>Signal Generation</span><span>Analytics</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Field: Education</div>
+      <h2>Education</h2>
+    </div>
+    <div class="ed-cert-grid">
+      <div>
+        <div class="record">
+          <div class="when">Completed</div>
+          <h4>Cybersecurity &amp; Data Training</h4>
+          <div class="org">Alpvest Institute for Future Tech</div>
+        </div>
+        <div class="record">
+          <div class="when">Online Course</div>
+          <h4>IT in Business</h4>
+          <div class="org">HP LIFE</div>
+        </div>
+        <div class="record">
+          <div class="when">2024</div>
+          <h4>Matric</h4>
+          <div class="org">Cacamezela High School</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Field: Certifications</div>
+      <h2>Certifications</h2>
+    </div>
+    <div class="ed-cert-grid">
+      <div>
+        <div class="record cert-item">
+          <div class="when">Certified</div>
+          <h4>Certified Ethical Hacker</h4>
+          <div class="org">Alpvest Institute for Future Tech</div>
+        </div>
+        <div class="record cert-item">
+          <div class="when">Full Certification</div>
+          <h4>Cybersecurity Analyst</h4>
+          <div class="org">Alpvest Institute for Future Tech</div>
+        </div>
+      </div>
+      <div>
+        <div class="record cert-item">
+          <div class="when">Certified</div>
+          <h4>Microsoft Excel Certification</h4>
+          <div class="org">Alpvest Institute for Future Tech</div>
+        </div>
+        <div class="record cert-item">
+          <div class="when">Completed</div>
+          <h4>IT in Business</h4>
+          <div class="org">HP LIFE Online Course</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="contact-panel">
+      <div>
+        <div class="eyebrow">Field: Contact</div>
+        <h2>Let's work together</h2>
+        <p>Open to internships and entry-level opportunities in cybersecurity, security operations and data analysis. Reach out — I reply quickly.</p>
+        <div class="contact-list">
+          <a href="mailto:motlatsisandileseema06@gmail.com"><span class="k">Email</span> motlatsisandileseema06@gmail.com</a>
+          <a href="tel:+27738857168"><span class="k">Phone</span> 073 885 7168</a>
+          <a href="#" aria-label="Add your GitHub profile link"><span class="k">GitHub</span> Add your GitHub link</a>
+          <a href="#" aria-label="Add your LinkedIn profile link"><span class="k">LinkedIn</span> Add your LinkedIn link</a>
+        </div>
+      </div>
+      <div class="status-stamp">
+        FILE STATUS: ACTIVE
+        <span>Open to opportunities — available immediately</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Motlatsi Seema — Built with care, secured by design.</p>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('siteNav');
+  if(toggle){
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+  }
+</script>
+
+</body>
+</html>
